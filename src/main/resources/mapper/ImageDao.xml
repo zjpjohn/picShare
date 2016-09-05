@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.ImageDao">
+    <resultMap id="Image" type="entity.Image">
+        <id property="id" column="id"></id>
+        <result column="name" property="name"></result>
+        <result column="url" property="url"></result>
+        <result column="date" property="date"></result>
+        <association property="user" resultMap="dao.UserDao.User"></association>
+    </resultMap>
+</mapper>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- 这是 MyBatis 中极为重要的调整设置，它们会改变 MyBatis 的运行时行为。
+设置中各项的意图、默认值等。-->
+<configuration>
+    <!--配置全局属性-->
+    <settings>
+        <setting name="autoMappingBehavior" value="FULL"></setting>
+        <!-- 使用jdbc的getGeneratedKeys获取数据库自增主键值-->
+        <setting name="useGeneratedKeys" value="true"/>
+        <!-- 使用列的别名替换列名 默认:truecom.github.pagehelper
+        例如：select name as title from table
+        其中name是我们具体的列名称，title是实体中的属性名，
+        mybaits会自动识别出列Nme转化成了title,同时把器自动赋值给我们entity对应的实体的属性里面去
+        -->
+        <setting name="useColumnLabel" value="true"/>
+        <!--
+          是否开启自动驼峰命名规则（camel case）映射
+          ，即从经典数据库列名 A_COLUMN 到经典 Java 属性名 aColumn 的类似映射
+        -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="logPrefix" value="dao."/>
+        <!-- 打开延迟加载 的开关 -->
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <!-- 将积极加载改为消极加载即按需要加载 -->
+        <setting name="aggressiveLazyLoading" value="false"/>
+        <!-- 开启二级缓存 -->
+        <!-- <setting name="cacheEnabled" value="true"/>-->
+    </settings>
+</configuration>
