@@ -12,7 +12,6 @@ public class Image implements Serializable{
     private String url;    //图片URL
     private Date date;    //上传时间
     private User user;    //所属用户
-
     public int getId() {
         return id;
     }

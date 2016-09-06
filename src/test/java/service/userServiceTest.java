@@ -1,5 +1,4 @@
-package dao;
-
+package service;
 
 import entity.User;
 import org.junit.Test;
@@ -9,31 +8,22 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import java.util.List;
-
-
 /**
- * Created by Administrator on 2016/9/3.
+ * Created by Administrator on 2016/9/6.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:spring/spring-dao.xml"})
-public class UserDaoTest {
+@ContextConfiguration(locations = {"classpath:spring/spring-*.xml"})
+public class userServiceTest {
     private final Logger logger= LoggerFactory.getLogger(this.getClass());
     @Autowired
-    private UserDao userDao;
+    private userService userService;
     @Test
     public void getUserByName() throws Exception {
-     List<User> list= userDao.getUserByName("ddd");
-        System.out.println("***********");
+        userService.getUserByName("ddd");
     }
-
     @Test
     public void insertUser() throws Exception {
-        User user=new User();
-        user.setPassword("&&&&");
-        user.setUsername("hahajs");
-        System.out.println("**********"+userDao.insertUser(user));
+        userService.insertUser(new User("VV","SJSSJSJ"));
     }
 
 }

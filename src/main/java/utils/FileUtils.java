@@ -13,10 +13,9 @@ import java.io.InputStream;
  * Created by Administrator on 2016/9/3.
  */
 public class FileUtils {
-    private static final String ACCESS_KEY = " your Access Key";//这里填上面我们讲到的，密钥管理里面的密钥
-    private static final String SECRET_KEY = "your Secret Key";
-    private static final String BUCKET_NAME = " your Bucket Name";//填我们在七牛云创建的 Bucket 名字
-
+    private static final String ACCESS_KEY = "kIEeKcEYLX_f0w-USmXN4jUWbXJv9a5U-X_FX9TH";//这里填上面我们讲到的，密钥管理里面的密钥
+    private static final String SECRET_KEY = "DvUYF9sM5jB6mNsnTo6Z9BBsCvmpBskQhvCrfSTW";
+    private static final String BUCKET_NAME = "danfengphoto";//填我们在七牛云创建的 Bucket 名字
     /**
      * 上传图片到七牛云存储
      * @param reader

@@ -11,6 +11,7 @@
     <resultMap id="User" type="entity.User">
         <id column="id" property="id"></id>
         <result column="username" property="username"></result>
+        <result column="password" property="password"></result>
         <collection property="images" resultMap="dao.ImageDao.Image"/>
     </resultMap>
     <select id="getUserByName" resultMap="User">
@@ -25,4 +26,7 @@ INNER JOIN image ON image.user_id = `user`.id
 WHERE
 `user`.username =#{username}
     </select>
+    <insert id="insertUser" parameterType="User">
+        INSERT  user(username,password) VALUES (#{username},#{password})
+    </insert>
 </mapper>

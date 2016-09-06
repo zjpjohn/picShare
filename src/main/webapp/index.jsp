@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -11,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ShiyanlouPhoto</title>
-    <link href="<%=basePath%>/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/bootstrap/4.0.0-alpha.3/css/bootstrap.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="http://labfile.oss.aliyuncs.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="http://labfile.oss.aliyuncs.com/respond.js/1.4.2/respond.min.js"></script>
@@ -93,7 +92,7 @@
 <!-- 注册对话框 end -->
 
 <script src="http://labfile.oss.aliyuncs.com/jquery/1.11.1/jquery.min.js"></script>
-<script src="<%=basePath%>/resources/js/bootstrap.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/4.0.0-alpha.3/js/bootstrap.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         //点击登录

@@ -8,6 +8,19 @@
         <result column="name" property="name"></result>
         <result column="url" property="url"></result>
         <result column="date" property="date"></result>
+        <result column="user_id" property="user.id"></result>
         <association property="user" resultMap="dao.UserDao.User"></association>
     </resultMap>
+    <select id="getImages" resultMap="Image">
+        select id, name, url, date, user_id from image where user_id = #{_id} order by date DESC
+    </select>
+    <insert id="insertImage" parameterType="Image">
+        insert into image(name, url, date, user_id) values(#{name}, #{url}, #{date}, #{user.id})
+    </insert>
+    <delete id="delImageByIds" parameterType="int[]">
+        delete from image where id IN
+        <foreach collection="ids" index="index" item="item" separator="," open="(" close=")">
+            #{item}
+        </foreach>
+    </delete>
 </mapper>
