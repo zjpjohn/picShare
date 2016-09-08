@@ -35,13 +35,21 @@ public class ImageServiceImpl  implements ImageService {
      *
      *
      */
-    public boolean deleteImgesByIds(int [] ids,String urls) {
-        String[] urlArray = urls.split(",");
-        if(!"".equals(urlArray[0])){
-            for(int i=0;i<ids.length;i++){
-                FileUtils.delete(urlArray[i]);//同时删除图片的链接
+    public boolean deleteImgesByIds(String  id_s,String urls) {
+        String ids[]=id_s.split(",");
+        int dds[]=new int[ids.length];
+        for(int i=0;i<ids.length;i++){
+            dds[i]=Integer.valueOf(ids[i]);
+        }
+        if(urls!=null)
+        {
+            String[] urlArray = urls.split(",");
+            if(!"".equals(urlArray[0])){
+                for(int i=0;i<ids.length;i++){
+                    FileUtils.delete(urlArray[i]);//同时删除图片的链接
+                }
             }
         }
-        return imageDao.delImageByIds(ids)>=1;
+        return imageDao.delImageByIds(dds)>=1;
     }
 }

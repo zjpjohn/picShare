@@ -11,5 +11,5 @@ import java.util.List;
 public interface ImageService {
     public List<Image> getImage(int uid);
     public boolean InsertImage(Image image,InputStream inputStream);
-    public boolean deleteImgesByIds(int [] ids,String urls);
+    public boolean deleteImgesByIds(String ids,String urls);
 }
